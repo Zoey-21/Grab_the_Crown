@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://resorces/text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resorces/tiles.tres" type="TileSet" id=3]
+[ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
+
+[node name="main menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite40" type="Sprite" parent="."]
+modulate = Color( 0.847059, 0.952941, 0.878431, 1 )
+position = Vector2( 186.309, 96.9089 )
+rotation = 1.5708
+scale = Vector2( 36.7042, 59.7022 )
+texture = ExtResource( 4 )
+vframes = 22
+hframes = 48
+
+[node name="start" type="Button" parent="."]
+margin_left = 142.41
+margin_top = 95.0
+margin_right = 204.41
+margin_bottom = 112.0
+custom_fonts/font = ExtResource( 2 )
+text = "start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="Button" parent="."]
+margin_left = 147.41
+margin_top = 116.75
+margin_right = 199.41
+margin_bottom = 133.75
+custom_fonts/font = ExtResource( 2 )
+text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fullscreen" type="Button" parent="."]
+margin_left = 117.91
+margin_top = 182.25
+margin_right = 229.91
+margin_bottom = 199.25
+custom_fonts/font = ExtResource( 2 )
+text = "fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 109.41
+margin_top = 27.261
+margin_right = 237.41
+margin_bottom = 59.261
+custom_fonts/font = ExtResource( 2 )
+text = "grab the
+crown"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 88.4334
+margin_top = 151.995
+margin_right = 257.433
+margin_bottom = 183.995
+custom_fonts/font = ExtResource( 2 )
+text = "arrow keys to move"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 176, 104 )
+current = true
+zoom = Vector2( 0.35, 0.35 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 4.40973, 0 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65543, 0, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 536870912, 0, 131079, 1073741836, 0, 131085, 1610612748, 0, 196615, 1073741824, 0, 196616, 1610612737, 0, 196617, 1610612737, 0, 196618, 1610612737, 0, 196619, 1610612737, 0, 196620, 1610612737, 0, 196621, 1610612736, 0 )
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]

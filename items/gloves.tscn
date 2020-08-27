@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://scripts/gloves.gd" type="Script" id=2]
+[ext_resource path="res://resorces/text.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.17096, 7.47443 )
+
+[node name="gloves" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.23597, -1.53379 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.520279, -1.78381 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 41
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -64.0
+margin_top = -48.0
+margin_right = 66.0
+margin_bottom = -17.0
+custom_fonts/font = ExtResource( 3 )
+text = "move into wall
+to climb"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="." to="." method="_on_gloves_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_gloves_body_exited"]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=2]
+[ext_resource path="res://resorces/story_end.gd" type="Script" id=3]
+[ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
+
+[node name="story_start" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 440 )
+scale = Vector2( 48.2709, 15.1248 )
+texture = ExtResource( 4 )
+vframes = 22
+hframes = 48
+
+[node name="Label" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 336.0
+margin_right = 892.0
+margin_bottom = 403.0
+custom_fonts/font = ExtResource( 1 )
+text = "you ran out of the castle as the walls came coming down
+
+finaly catching  your breath looking at the crown thatyou have found
+
+happy that you where able to get the crown out befor the collapsed "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -1374.24, -667.172 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D"]
+position = Vector2( 384, 160 )
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 22
+hframes = 48
+frame = 356
+
+[node name="gun" type="Sprite" parent="Node2D"]
+position = Vector2( 376.502, 161.589 )
+scale = Vector2( 0.535961, 0.411585 )
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 22
+hframes = 48
+frame = 469
+
+[node name="gui" type="Control" parent="Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="crown" type="Sprite" parent="Node2D/gui"]
+position = Vector2( 384.265, 157.032 )
+scale = Vector2( 0.376276, 0.376276 )
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 22
+hframes = 48
+frame = 140
+
+[node name="light" type="Sprite" parent="Node2D/gui"]
+position = Vector2( 407.624, 153.172 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 723
+
+[node name="gloves" type="Sprite" parent="Node2D/gui"]
+position = Vector2( 411.023, 183.628 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 41
+
+[node name="gnades" type="Sprite" parent="Node2D/gui"]
+position = Vector2( 361.639, 178.279 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 992

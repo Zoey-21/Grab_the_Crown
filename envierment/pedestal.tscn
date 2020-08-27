@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.1501, 14.0091 )
+
+[node name="pedestal" type="KinematicBody2D"]
+position = Vector2( 8, 8 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="pedestal" type="Sprite" parent="."]
+position = Vector2( -15.0286, -1.00527 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 819
+
+[node name="pedestal2" type="Sprite" parent="."]
+position = Vector2( -1.04337, -1.004 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 820
+
+[node name="pedestal3" type="Sprite" parent="."]
+position = Vector2( -1.0301, -14.9838 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 772
+
+[node name="pedestal4" type="Sprite" parent="."]
+position = Vector2( -15.0246, -14.9967 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 771
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.14462, -8.07841 )
+shape = SubResource( 1 )

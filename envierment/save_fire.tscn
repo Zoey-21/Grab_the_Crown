@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://scripts/save_fire.gd" type="Script" id=2]
+[ext_resource path="res://resorces/text.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.54978, 6.36157 )
+
+[node name="save_fire" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.58992, -1.5338 )
+shape = SubResource( 1 )
+
+[node name="fire" type="Sprite" parent="."]
+position = Vector2( -0.520279, -1.78381 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 559
+
+[node name="save" type="Node2D" parent="."]
+visible = false
+
+[node name="save" type="Sprite" parent="save"]
+position = Vector2( -0.37162, -15.4306 )
+scale = Vector2( 0.702699, 0.702699 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 810
+
+[node name="Label" type="Label" parent="save"]
+margin_left = -22.7937
+margin_top = -32.2976
+margin_right = 27.2063
+margin_bottom = -20.2976
+custom_fonts/font = ExtResource( 3 )
+text = "saved"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="." to="." method="_on_save_fire_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_save_fire_body_exited"]

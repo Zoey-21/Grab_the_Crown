@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.340708, 0.637168, 0.986726, 1 )
+colors = PoolColorArray( 0.235294, 0.168627, 0.207843, 1, 0.235294, 0.168627, 0.207843, 1, 0.273015, 0.273015, 0.273015, 0.690583, 0.882353, 0.882353, 0.882353, 0, 1, 1, 1, 0 )
+
+[node name="crumble" type="CPUParticles2D"]
+amount = 2
+speed_scale = 0.5
+explosiveness = 0.81
+emission_shape = 1
+emission_sphere_radius = 1.0
+angular_velocity = 144.0
+angular_velocity_random = 1.0
+scale_amount = 3.0
+color_ramp = SubResource( 1 )

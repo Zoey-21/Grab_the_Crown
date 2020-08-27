@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://scripts/spring.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "spring"
+length = 0.13
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 261, 262, 263 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.29051, 7.58984 )
+
+[node name="spring" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/spring = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.583992, -2.16008 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.520279, -1.78381 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 261
+
+[node name="reset" type="Timer" parent="."]
+one_shot = true
+[connection signal="body_entered" from="." to="." method="_on_spring_body_entered"]
+[connection signal="timeout" from="reset" to="." method="_on_reset_timeout"]

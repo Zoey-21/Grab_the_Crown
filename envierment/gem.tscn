@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://scripts/gem.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.28905, 7.3302 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.50294, 8.02488 )
+
+[node name="gem" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.297638, -1.88504 )
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -0.595272, -2.08346 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.520279, -1.78381 )
+texture = ExtResource( 1 )
+vframes = 22
+hframes = 48
+frame = 513
+[connection signal="body_entered" from="." to="." method="_on_gem_body_entered"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=2]
+[ext_resource path="res://scripts/story_start.gd" type="Script" id=3]
+[ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
+
+[node name="story_start" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="crown" type="Sprite" parent="."]
+position = Vector2( 537.24, 175.947 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 140
+
+[node name="player" type="Sprite" parent="."]
+position = Vector2( 384, 216 )
+rotation = -0.144057
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 355
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 440 )
+scale = Vector2( 48.2709, 15.1248 )
+texture = ExtResource( 4 )
+vframes = 22
+hframes = 48
+
+[node name="Label" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 336.0
+margin_right = 892.0
+margin_bottom = 459.0
+custom_fonts/font = ExtResource( 1 )
+text = "after a long jurney you have found the ruins holding the crown of your grand-father
+
+the ruins before you is falling apart but you need to go in
+
+after resting you get up and starting twords the  casile
+
+whithout a weapon the casile is dangerous place to be
+
+hopefully you can find something inside to help on your way "
+__meta__ = {
+"_edit_use_anchors_": false
+}

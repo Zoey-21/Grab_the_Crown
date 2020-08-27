@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walk.wav-94b9348a90399a7e197451e835b31ef9.sample"
+
+[deps]
+
+source_file="res://resorces/sounds/walk.wav"
+dest_files=[ "res://.import/walk.wav-94b9348a90399a7e197451e835b31ef9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
