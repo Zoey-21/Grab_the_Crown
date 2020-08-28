@@ -50,3 +50,24 @@ hopefully you can find something inside to help on your way "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="z" type="Sprite" parent="."]
+position = Vector2( 840, 504 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 959
+
+[node name="z2" type="Sprite" parent="."]
+position = Vector2( 840, 504 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 711
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

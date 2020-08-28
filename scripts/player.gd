@@ -226,7 +226,6 @@ func gui():
 		warning.set_text(str(round(get_tree().get_root().get_node("col_timer").time_left)))
 		
 func respawn():
-	get_tree().reload_current_scene()
 	position = player_data.player_data["postion_save"]
 	player_data.loading()
 	get_tree().change_scene(player_data.player_data["map"])
@@ -258,10 +257,12 @@ func items():
 		GRAVITY = REG_GRAVITY
 	
 	if player_data.player_data["g-nades"]:
-		if Input.is_action_pressed("move_down") and Input.is_action_just_pressed("shoot") and is_on_floor():
+		if Input.is_action_pressed("move_down") and Input.is_action_just_pressed("shoot") and is_on_floor() and player_data.player_data["g-nades_out"] != 2:
 				var gnade_instance = gnade.instance()# set up a instance of the bullet
 				gnade_instance.position = get_global_position() + gnade_aim #gives bullet player position
 				get_node("..").add_child(gnade_instance)# adds bullet to the root of the map
+				player_data.player_data["g-nades_out"] += 1
+				print(player_data.player_data["g-nades_out"])
 
 func _on_light_area_entered(area):
 	if area.is_in_group("dark"):

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=2]
-[ext_resource path="res://resorces/story_end.gd" type="Script" id=3]
+[ext_resource path="res://scripts/story_end.gd" type="Script" id=3]
 [ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
 
 [node name="story_start" type="Node2D"]
@@ -51,6 +51,20 @@ vframes = 22
 hframes = 48
 frame = 469
 
+[node name="z" type="Sprite" parent="Node2D"]
+position = Vector2( 442.848, 235.834 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 959
+
+[node name="z2" type="Sprite" parent="Node2D"]
+position = Vector2( 442.848, 235.834 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 711
+
 [node name="gui" type="Control" parent="Node2D"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -87,3 +101,8 @@ texture = ExtResource( 2 )
 vframes = 22
 hframes = 48
 frame = 992
+
+[node name="Timer" type="Timer" parent="Node2D"]
+wait_time = 0.75
+autostart = true
+[connection signal="timeout" from="Node2D/Timer" to="." method="_on_Timer_timeout"]

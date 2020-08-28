@@ -7,6 +7,8 @@ var player_data_default = {
 	"light" : false,
 	"gloves" : false,
 	"g-nades" : false,
+	"g-nades_out" : 0,
+	
 	"red" : false,
 	"blue" : false,
 	"yellow" : false,
@@ -34,6 +36,7 @@ var player_data = {
 	"light" : false,
 	"gloves" : false,
 	"g-nades" : false,
+	"g-nades_out" : 0,
 	"red" : false,
 	"blue" : false,
 	"yellow" : false,
