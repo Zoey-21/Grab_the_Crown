@@ -248,7 +248,6 @@ one_shot = true
 one_shot = true
 
 [node name="light" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="light"]
 shape = SubResource( 7 )

@@ -176,7 +176,7 @@ func gui():
 			hp_1.visible = true
 			hp_2.visible = false
 			hp_3.visible = false
-	if player_data.player_data["health"] < 0:
+	if player_data.player_data["health"] <= 0:
 		hp_1.visible = false
 		hp_2.visible = false
 		hp_3.visible = false
@@ -285,10 +285,8 @@ func make_sound(audio,vol):
 	sound.set_volume_db(vol)
 	sound.play()
 
-
 func _on_sound_maker2_finished():
 	is_walking = true
-
 
 func _on_can_jump_timeout():
 	can_jump = false
