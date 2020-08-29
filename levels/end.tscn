@@ -30,7 +30,7 @@ script = ExtResource( 8 )
 
 [node name="Sprite40" type="Sprite" parent="."]
 modulate = Color( 0.847059, 0.952941, 0.878431, 1 )
-position = Vector2( -88.7709, -1023.9 )
+position = Vector2( -88, -1024 )
 rotation = 1.5708
 scale = Vector2( 117.883, 38.915 )
 texture = ExtResource( 12 )

@@ -117,12 +117,7 @@ position = Vector2( 0.0208549, 0.0208569 )
 shape = SubResource( 6 )
 disabled = true
 
-[node name="gui" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="gui" type="Node2D" parent="."]
 
 [node name="crown" type="Sprite" parent="gui"]
 visible = false
@@ -244,9 +239,6 @@ __meta__ = {
 wait_time = 2.0
 one_shot = true
 
-[node name="invic" type="Timer" parent="."]
-one_shot = true
-
 [node name="light" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="light"]
@@ -261,8 +253,12 @@ volume_db = -5.0
 
 [node name="can_jump" type="Timer" parent="."]
 wait_time = 0.15
+
+[node name="invic" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
 [connection signal="timeout" from="gui/warning/start_timer" to="." method="_on_start_timer_timeout"]
-[connection signal="timeout" from="invic" to="." method="_on_invic_timeout"]
 [connection signal="area_entered" from="light" to="." method="_on_light_area_entered"]
 [connection signal="finished" from="sound_maker2" to="." method="_on_sound_maker2_finished"]
 [connection signal="timeout" from="can_jump" to="." method="_on_can_jump_timeout"]
+[connection signal="timeout" from="invic" to="." method="_on_invic_timeout"]

@@ -46,9 +46,14 @@ var is_walking = true
 var can_jump = true
 onready var can_jump_timer = $can_jump
 
+var can_get_hit = true
+
 func _ready():
 	position = player_data.player_data["postion_save"]
 	Input.set_mouse_mode(1)
+	player_data.player_data["g-nades_out"] = 0
+	if player_data.player_data["collapsing"]:
+		get_tree().get_root().get_node("col_timer").connect("timeout",self,"_on_col_timer_timeout") 
 
 func _physics_process(_delta):
 	
@@ -114,10 +119,11 @@ func _physics_process(_delta):
 	gui()
 
 func hit():
-	player_data.player_data["health"] -= 1
-	make_sound("res://resorces/sounds/player_hit.wav",3)
-	set_collision_mask_bit(1,false)
-	invic.start()
+	if can_get_hit:
+		player_data.player_data["health"] -= 1
+		make_sound("res://resorces/sounds/player_hit.wav",3)
+		can_get_hit = false
+		invic.start()
 
 func heal():
 	if player_data.player_data["health"] < 3:
@@ -145,7 +151,7 @@ func play_anim(anim):
 	player.play(anim)
 
 func _on_invic_timeout():
-	set_collision_mask_bit(1,true)
+	can_get_hit = true
 
 func gui():
 	match player_data.player_data["gun"]:
@@ -227,6 +233,8 @@ func gui():
 		
 func respawn():
 	position = player_data.player_data["postion_save"]
+	if player_data.player_data["collapsing"]:
+		get_tree().get_root().get_node("col_timer").queue_free()
 	player_data.loading()
 	get_tree().change_scene(player_data.player_data["map"])
 	player_data.player_data["health"] = 3
@@ -278,7 +286,8 @@ func _on_start_timer_timeout():
 	player_data.player_data["collapsing"] = true
 
 func _on_col_timer_timeout():
-	get_tree().change_scene(player_data.player_data["map"])
+	make_sound("res://resorces/sounds/Explosion.wav",0)
+	respawn()
 
 func make_sound(audio,vol):
 	audio = load(audio)

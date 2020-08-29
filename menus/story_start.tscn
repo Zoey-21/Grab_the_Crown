@@ -1,33 +1,162 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=2]
 [ext_resource path="res://scripts/story_start.gd" type="Script" id=3]
 [ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
+[ext_resource path="res://envierment/tree.tscn" type="PackedScene" id=5]
 
 [node name="story_start" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="crown" type="Sprite" parent="."]
-position = Vector2( 537.24, 175.947 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 2 )
+[node name="Sprite21" type="Sprite" parent="."]
+modulate = Color( 0.625, 0.383301, 0.141602, 1 )
+position = Vector2( 496, 440 )
+rotation = 3.14159
+scale = Vector2( 76.1022, 22.1431 )
+texture = ExtResource( 4 )
 vframes = 22
 hframes = 48
-frame = 140
 
 [node name="player" type="Sprite" parent="."]
-position = Vector2( 384, 216 )
-rotation = -0.144057
+position = Vector2( 216, 224 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 vframes = 22
 hframes = 48
 frame = 355
 
+[node name="player2" type="Sprite" parent="."]
+position = Vector2( 32, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player3" type="Sprite" parent="."]
+position = Vector2( 96, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player4" type="Sprite" parent="."]
+position = Vector2( 160, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player5" type="Sprite" parent="."]
+position = Vector2( 224, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player6" type="Sprite" parent="."]
+position = Vector2( 288, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player7" type="Sprite" parent="."]
+position = Vector2( 352, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player8" type="Sprite" parent="."]
+position = Vector2( 416, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player9" type="Sprite" parent="."]
+position = Vector2( 480, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player10" type="Sprite" parent="."]
+position = Vector2( 544, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player11" type="Sprite" parent="."]
+position = Vector2( 608, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player12" type="Sprite" parent="."]
+position = Vector2( 672, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player13" type="Sprite" parent="."]
+position = Vector2( 736, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player14" type="Sprite" parent="."]
+position = Vector2( 800, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player15" type="Sprite" parent="."]
+position = Vector2( 864, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player16" type="Sprite" parent="."]
+position = Vector2( 928, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
+[node name="player17" type="Sprite" parent="."]
+position = Vector2( 992, 296 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+vframes = 22
+hframes = 48
+frame = 785
+
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 512, 440 )
-scale = Vector2( 48.2709, 15.1248 )
+position = Vector2( 518.916, 440 )
+scale = Vector2( 49.1355, 15.1248 )
 texture = ExtResource( 4 )
 vframes = 22
 hframes = 48
@@ -35,18 +164,20 @@ hframes = 48
 [node name="Label" type="Label" parent="."]
 margin_left = 136.0
 margin_top = 336.0
-margin_right = 892.0
-margin_bottom = 459.0
+margin_right = 896.0
+margin_bottom = 504.0
 custom_fonts/font = ExtResource( 1 )
-text = "after a long jurney you have found the ruins holding the crown of your grand-father
+text = "after a long journey you have found the ruins holding the crown of your grand-father.
 
-the ruins before you is falling apart but you need to go in
+you can see the castle though the trees.
 
-after resting you get up and starting twords the  casile
+the ruins before you is falling apart but you need to go in.
 
-whithout a weapon the casile is dangerous place to be
+after resting you get up and starting towards the castle.
 
-hopefully you can find something inside to help on your way "
+without a weapon the castle is dangerous place to be.
+
+hopefully you can find something inside to help on your way ."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -70,4 +201,20 @@ frame = 711
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.75
 autostart = true
+
+[node name="tree" parent="." instance=ExtResource( 5 )]
+position = Vector2( 72, 96 )
+scale = Vector2( 31.156, 31.156 )
+
+[node name="tree2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416, 96 )
+scale = Vector2( 31.156, 31.156 )
+
+[node name="tree3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 744, 96 )
+scale = Vector2( 31.156, 31.156 )
+
+[node name="tree4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1064, 96 )
+scale = Vector2( 31.156, 31.156 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
