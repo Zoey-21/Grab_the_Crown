@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resorces/tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
+[ext_resource path="res://addons/newgrounds/NewGroundsAPI.gd" type="Script" id=5]
 
 [node name="main menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -50,6 +51,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="login" type="Button" parent="."]
+margin_left = 117.91
+margin_top = 68.4549
+margin_right = 229.91
+margin_bottom = 85.4549
+custom_fonts/font = ExtResource( 2 )
+text = "log-in"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="check" type="Button" parent="."]
+margin_left = 9.12041
+margin_top = 100.157
+margin_right = 121.12
+margin_bottom = 117.157
+custom_fonts/font = ExtResource( 2 )
+text = "check"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
 margin_left = 109.41
 margin_top = 27.261
@@ -86,6 +109,47 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 65543, 0, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 536870912, 0, 131079, 1073741836, 0, 131085, 1610612748, 0, 196615, 1073741824, 0, 196616, 1610612737, 0, 196617, 1610612737, 0, 196618, 1610612737, 0, 196619, 1610612737, 0, 196620, 1610612737, 0, 196621, 1610612736, 0 )
+
+[node name="user" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sat" type="Label" parent="."]
+margin_left = 1.88776
+margin_top = 71.9704
+margin_right = 41.8878
+margin_bottom = 85.9704
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labal" type="Label" parent="."]
+margin_left = 1.65178
+margin_top = 51.2052
+margin_right = 41.6518
+margin_bottom = 65.2052
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="."]
+margin_left = 0.707901
+margin_top = 24.7767
+margin_right = 40.7079
+margin_bottom = 38.7767
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGroundsAPI" type="HTTPRequest" parent="."]
+script = ExtResource( 5 )
+applicationId = "50757:kbsDEglL"
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="check" to="." method="_on_checklog_pressed"]

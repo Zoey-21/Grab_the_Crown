@@ -1148,5 +1148,5 @@ position = Vector2( 488, -40 )
 position = Vector2( 752, -2080 )
 [connection signal="body_entered" from="Camera2D/death_plane" to="." method="_on_death_plane_body_entered"]
 [connection signal="body_entered" from="start" to="." method="_on_start_body_entered"]
-[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
 [connection signal="body_entered" from="end" to="." method="_on_start_body_entered"]
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
