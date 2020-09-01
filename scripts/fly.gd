@@ -10,8 +10,8 @@ var rand_numb #random number for movement
 
 func _ready():
 	speed = 10
-	max_health = 1
-	health = 1
+	max_health = 2
+	health = 2
 
 func _physics_process(delta):
 	if !dead:
@@ -30,7 +30,6 @@ func _physics_process(delta):
 
 
 
-
 func _on_fly_time_timeout():
 	rand_numb = randi() % 4 + 1 # makes random number from 1 to 4
 	match rand_numb: # switch statment useing random numbers
@@ -42,8 +41,3 @@ func _on_fly_time_timeout():
 			place.y = position.y + 15 # down movment
 		4:
 			place.y = position.y - 15 #up movment
-
-
-
-
-

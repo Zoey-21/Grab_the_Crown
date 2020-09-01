@@ -98,9 +98,7 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 4.28192, 0.897181 )
 
-[node name="bat" type="KinematicBody2D" groups=[
-"delete",
-]]
+[node name="bat" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource( 2 )

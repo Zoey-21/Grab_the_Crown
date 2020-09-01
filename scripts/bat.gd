@@ -13,11 +13,11 @@ var path = []
 
 func _ready():
 	speed = 50
-	health = 3
-	max_health = 3
+	health = 5
+	max_health = 5
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !dead:
 		match state:
 			0:
@@ -57,7 +57,7 @@ func _process(delta):
 	
 func move_along_path(dis):
 	var last_pont = position
-	for index in range(path.size()):
+	for _index in range(path.size()):
 		var distance_between = last_pont.distance_to(path[0])
 		if dis <= distance_between:
 			position = last_pont.linear_interpolate(path[0],dis / distance_between)
@@ -73,3 +73,13 @@ func move_along_path(dis):
 func _on_VisibilityNotifier2D_screen_exited():
 	state = 0
 	raycast.enabled = true
+	global_position = starting_pos
+	sprite.visible = true
+	collis.disabled = false
+	feet.disabled = false
+	dead = false
+	path.resize(0)
+	
+
+
+

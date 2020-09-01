@@ -13,14 +13,14 @@ onready var hit_collis = $hitbox/CollisionShape2D
 onready var feet = $feet
 
 func _ready():
-	starting_pos = position
+	starting_pos = global_position
 
 
 func hit():
 	print(health)
 	health -= player.gun_power
 	if health < 0:
-		var num = rand_range(0,5)
+		var num = rand_range(0,4)
 		print(num)
 		if round(num) == 0:
 			var meat_instance = meat.instance()
@@ -32,7 +32,7 @@ func hit():
 		feet.set_deferred("disabled", true)
 		player.make_sound("res://resorces/sounds/ene_death.wav",0)
 		health = max_health
-		position = starting_pos
+		global_position = starting_pos
 		dead =true
 		if self.is_in_group("delete"):
 			queue_free()
@@ -46,6 +46,7 @@ func _on_hitbox_body_entered(body):
 		hit()
 
 func _on_VisibilityNotifier2D_screen_exited():
+	global_position = starting_pos
 	sprite.visible = true
 	collis.disabled = false
 	feet.disabled = false

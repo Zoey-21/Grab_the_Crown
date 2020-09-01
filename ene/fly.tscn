@@ -9,11 +9,9 @@ extents = Vector2( 4.88095, 5.34748 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5, 5.35767 )
 
-[node name="fly" type="KinematicBody2D" groups=[
-"delete",
-]]
-collision_layer = 2
-collision_mask = 5
+[node name="fly" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -26,7 +24,6 @@ frame = 271
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-disabled = true
 
 [node name="fly_time" type="Timer" parent="."]
 autostart = true

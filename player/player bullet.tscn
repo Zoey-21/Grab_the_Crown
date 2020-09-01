@@ -9,7 +9,7 @@ radius = 1.28179
 [node name="bullet" type="RigidBody2D" groups=[
 "bullet",
 ]]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 6
 mass = 0.00102041
 gravity_scale = 0.0

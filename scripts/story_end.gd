@@ -55,7 +55,7 @@ func ending():
 		complete.visible = false
 		speed.visible = false
 		low.visible = false
-		_unlock(60319)
+	_unlock(60319)
 		
 func items():
 	match player_data.player_data["gun"]:

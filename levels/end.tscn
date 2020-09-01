@@ -48,7 +48,7 @@ hframes = 48
 
 [node name="Sprite42" type="Sprite" parent="."]
 modulate = Color( 0.847059, 0.952941, 0.878431, 1 )
-position = Vector2( 8002.28, 3879.14 )
+position = Vector2( 8000, 3880 )
 rotation = 1.5708
 scale = Vector2( 25.8918, 62.1108 )
 texture = ExtResource( 12 )
@@ -611,7 +611,7 @@ position = Vector2( 16, -1952 )
 shape = SubResource( 3 )
 
 [node name="area_transition" parent="." instance=ExtResource( 2 )]
-position = Vector2( 7746.1, 3623.14 )
+position = Vector2( 7680, 3616 )
 level = 2
 
 [node name="player" parent="." instance=ExtResource( 3 )]
@@ -1152,5 +1152,5 @@ position = Vector2( 8442.1, 3615.14 )
 position = Vector2( 8706.1, 1575.14 )
 [connection signal="body_entered" from="Camera2D/death_plane" to="." method="_on_death_plane_body_entered"]
 [connection signal="body_entered" from="start" to="." method="_on_start_body_entered"]
-[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
 [connection signal="body_entered" from="end" to="." method="_on_start_body_entered"]
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]

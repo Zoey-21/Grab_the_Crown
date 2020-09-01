@@ -15,10 +15,10 @@ var velo = Vector2()
 
 func _ready():
 	speed = 128
-	health = 2
-	max_health = 2
+	health = 3
+	max_health = 3
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !dead:
 		var player_dis_x = player.position.x - position.x
 		var player_dis_y = player.position.y - position.y

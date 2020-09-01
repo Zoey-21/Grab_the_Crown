@@ -24,7 +24,7 @@ func _ready():
 	pl_gui.visible = false
 	cam_gui.visible = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	gui()
 	if up:
 		if !player_data.player_data["finished"]:
@@ -34,6 +34,7 @@ func _physics_process(delta):
 			$Camera2D.position.y -=  0.8
 	else:
 		$player/Camera2D.current = true
+		$Camera2D/death_plane/CollisionShape2D.disabled
 		pl_gui.visible = true
 		cam_gui.visible = false
 
