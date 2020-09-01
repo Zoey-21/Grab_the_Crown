@@ -30,6 +30,7 @@ func hit():
 		collis.set_deferred("disabled", true)
 		hit_collis.set_deferred("disabled", true)
 		feet.set_deferred("disabled", true)
+		player.make_sound("res://resorces/sounds/ene_death.wav",0)
 		health = max_health
 		position = starting_pos
 		dead =true

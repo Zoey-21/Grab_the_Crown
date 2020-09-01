@@ -3,6 +3,8 @@ extends Node2D
 const SAVE_FILE_NAME = "user://ngsettings.save"
 onready var player_data = get_node("/root/PlayerData")
 onready var api = get_node("/root/newgrowndapi")
+onready var enable = $enable
+onready var login = $login
 var result
 var passportUrl = null
 var saveFile = File.new()
@@ -28,10 +30,13 @@ func _on_fullscreen_pressed():
 		OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_login_pressed():
+	login.visible = false
+	enable.visible = true
 	OS.shell_open(passportUrl)
 	passportUrl = null
 	$lonin.disabled = true
 	$labal.text = 'Go and login via browser to connect user with session'
+	
 
 func _write_save_file():
 	api.save()
@@ -81,6 +86,7 @@ func _on_checklog_pressed():
 				$sat.text = 'Session: Valid'
 			if result.response.session.user:
 				$user.text = result.response.session.user.name.to_lower()
+				enable.disabled = true
 			else:
 				$user.text = ' '
 		else:

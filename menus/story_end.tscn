@@ -232,7 +232,6 @@ __meta__ = {
 }
 
 [node name="speed" type="Label" parent="."]
-visible = false
 margin_left = 136.0
 margin_top = 336.0
 margin_right = 892.0
@@ -244,12 +243,15 @@ you reach up to the crown on your head as you are running
 
 to make sure that its still there
 
+not caring what else was in your pockets
+
 then you sprint out before anything else happens"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="low%" type="Label" parent="."]
+visible = false
 margin_left = 136.0
 margin_top = 336.0
 margin_right = 892.0

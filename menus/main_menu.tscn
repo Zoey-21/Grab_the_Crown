@@ -51,6 +51,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="enable" type="Button" parent="."]
+margin_left = 117.91
+margin_top = 68.455
+margin_right = 229.91
+margin_bottom = 85.455
+custom_fonts/font = ExtResource( 2 )
+text = "enable"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="login" type="Button" parent="."]
 margin_left = 117.91
 margin_top = 68.4549
@@ -58,17 +69,6 @@ margin_right = 229.91
 margin_bottom = 85.4549
 custom_fonts/font = ExtResource( 2 )
 text = "log-in"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="check" type="Button" parent="."]
-margin_left = 9.12041
-margin_top = 100.157
-margin_right = 121.12
-margin_bottom = 117.157
-custom_fonts/font = ExtResource( 2 )
-text = "check"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -151,5 +151,5 @@ applicationId = "50757:kbsDEglL"
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="enable" to="." method="_on_checklog_pressed"]
 [connection signal="pressed" from="login" to="." method="_on_login_pressed"]
-[connection signal="pressed" from="check" to="." method="_on_checklog_pressed"]

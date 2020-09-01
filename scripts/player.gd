@@ -35,6 +35,7 @@ var collapsing = false
 
 onready var sound = $sound_maker
 onready var walk = $sound_maker2
+onready var climb = $sound_maker3
 
 var gnade = preload("res://player/g_nades.tscn")
 var gnade_aim = Vector2(10.8, 0)
@@ -43,6 +44,7 @@ var y_velo = 0
 var facing_right = true
 
 var is_walking = true
+var is_clibing = true
 var can_jump = true
 onready var can_jump_timer = $can_jump
 
@@ -252,6 +254,9 @@ func items():
 			
 	if player_data.player_data["gloves"]:
 		if is_on_wall():
+			if is_clibing:
+				climb.play()
+				is_clibing = false
 			GRAVITY = 0
 			y_velo = -JUMP_FORCE /2
 		else:
@@ -300,3 +305,6 @@ func _on_sound_maker2_finished():
 
 func _on_can_jump_timeout():
 	can_jump = false
+
+func _on_sound_maker3_finished():
+	is_clibing = true

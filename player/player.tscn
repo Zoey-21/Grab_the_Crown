@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resorces/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=4]
 [ext_resource path="res://resorces/sounds/player_fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://resorces/sounds/walk.wav" type="AudioStream" id=6]
+[ext_resource path="res://resorces/sounds/climbing.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.28192, 0.897181 )
@@ -251,6 +252,10 @@ stream = ExtResource( 5 )
 stream = ExtResource( 6 )
 volume_db = -5.0
 
+[node name="sound_maker3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = -5.0
+
 [node name="can_jump" type="Timer" parent="."]
 wait_time = 0.15
 
@@ -260,5 +265,6 @@ one_shot = true
 [connection signal="timeout" from="gui/warning/start_timer" to="." method="_on_start_timer_timeout"]
 [connection signal="area_entered" from="light" to="." method="_on_light_area_entered"]
 [connection signal="finished" from="sound_maker2" to="." method="_on_sound_maker2_finished"]
+[connection signal="finished" from="sound_maker3" to="." method="_on_sound_maker3_finished"]
 [connection signal="timeout" from="can_jump" to="." method="_on_can_jump_timeout"]
 [connection signal="timeout" from="invic" to="." method="_on_invic_timeout"]
