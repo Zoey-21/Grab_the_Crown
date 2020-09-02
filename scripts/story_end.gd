@@ -18,7 +18,7 @@ onready var beat_game = get_node("beat_game")
 onready var complete = get_node("100%")
 onready var speed = get_node("speed")
 onready var low = get_node("low%")
-
+onready var time_played = get_node("/root/timeplayed")
 
 var start = false
 
@@ -26,19 +26,26 @@ var passportUrl
 onready var api = get_node("/root/newgrowndapi")
 
 func _ready():
+	time_played.stop()
 	api.loading()
 	ending()
 	items()
+	music.play_music("res://resorces/music/Grab The Crown - Main Theme.wav",-12)
+	
+	var minn =int(player_data.player_data["time_played"]/60)
+	var sec = player_data.player_data["time_played"] - minn*60
+	$time.text = "time taken:" + str(minn) + ":" + str(sec)
+	
 
 		
 func ending():
-#	if time it takes to beet speed:
-#		beat_game.visible = false
-#		complete.visible = false
-#		speed.visible = true
-#		low.visible = false
-#		_unlock(60320)
-	if player_data.player_data["gun"] == 3 and player_data.player_data["light"]:
+	if player_data.player_data["time_played"] <= 420:
+		beat_game.visible = false
+		complete.visible = false
+		speed.visible = true
+		low.visible = false
+		_unlock(60320)
+	elif player_data.player_data["gun"] == 3 and player_data.player_data["light"]:
 		beat_game.visible = false
 		complete.visible = true
 		speed.visible = false

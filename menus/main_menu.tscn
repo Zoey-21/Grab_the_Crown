@@ -11,9 +11,9 @@ script = ExtResource( 1 )
 
 [node name="Sprite40" type="Sprite" parent="."]
 modulate = Color( 0.847059, 0.952941, 0.878431, 1 )
-position = Vector2( 186.309, 96.9089 )
+position = Vector2( 1254.31, 639.909 )
 rotation = 1.5708
-scale = Vector2( 36.7042, 59.7022 )
+scale = Vector2( 104.579, 193.202 )
 texture = ExtResource( 4 )
 vframes = 22
 hframes = 48
@@ -36,6 +36,28 @@ margin_right = 199.41
 margin_bottom = 133.75
 custom_fonts/font = ExtResource( 2 )
 text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits2" type="Button" parent="."]
+margin_left = 133.535
+margin_top = 143.238
+margin_right = 211.535
+margin_bottom = 160.238
+custom_fonts/font = ExtResource( 2 )
+text = "credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits3" type="Button" parent="."]
+margin_left = 885.0
+margin_top = 153.5
+margin_right = 937.0
+margin_bottom = 171.5
+custom_fonts/font = ExtResource( 2 )
+text = "back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -88,9 +110,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 88.4334
-margin_top = 151.995
+margin_top = 165.029
 margin_right = 257.433
-margin_bottom = 183.995
+margin_bottom = 197.029
 custom_fonts/font = ExtResource( 2 )
 text = "arrow keys to move"
 align = 1
@@ -103,12 +125,36 @@ position = Vector2( 176, 104 )
 current = true
 zoom = Vector2( 0.35, 0.35 )
 
+[node name="creditcam" type="Camera2D" parent="."]
+position = Vector2( 1123.63, 290.125 )
+zoom = Vector2( 0.5, 0.5 )
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 4.40973, 0 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 65543, 0, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 536870912, 0, 131079, 1073741836, 0, 131085, 1610612748, 0, 196615, 1073741824, 0, 196616, 1610612737, 0, 196617, 1610612737, 0, 196618, 1610612737, 0, 196619, 1610612737, 0, 196620, 1610612737, 0, 196621, 1610612736, 0 )
+
+[node name="credits" type="Label" parent="."]
+margin_left = 908.5
+margin_top = 191.0
+margin_right = 1334.5
+margin_bottom = 378.0
+text = "Tranquility Base by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/4542-tranquility-base
+License: http://creativecommons.org/licenses/by/4.0/
+
+Nerves by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/4117-nerves
+License: http://creativecommons.org/licenses/by/4.0/
+
+space 
+for 
+alex"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="user" type="Label" parent="."]
 margin_right = 40.0
@@ -119,6 +165,7 @@ __meta__ = {
 }
 
 [node name="sat" type="Label" parent="."]
+visible = false
 margin_left = 1.88776
 margin_top = 71.9704
 margin_right = 41.8878
@@ -128,6 +175,7 @@ __meta__ = {
 }
 
 [node name="labal" type="Label" parent="."]
+visible = false
 margin_left = 1.65178
 margin_top = 51.2052
 margin_right = 41.6518
@@ -137,6 +185,7 @@ __meta__ = {
 }
 
 [node name="Value" type="Label" parent="."]
+visible = false
 margin_left = 0.707901
 margin_top = 24.7767
 margin_right = 40.7079
@@ -150,6 +199,8 @@ script = ExtResource( 5 )
 applicationId = "50757:kbsDEglL"
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="credits2" to="." method="_on_credits2_pressed"]
+[connection signal="pressed" from="credits3" to="." method="_on_credits3_pressed"]
 [connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="enable" to="." method="_on_checklog_pressed"]
 [connection signal="pressed" from="login" to="." method="_on_login_pressed"]

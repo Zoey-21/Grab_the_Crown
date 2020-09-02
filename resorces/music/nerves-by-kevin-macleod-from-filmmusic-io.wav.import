@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/nerves-by-kevin-macleod-from-filmmusic-io.wav-0035a7e42bd075a392bb9fe400a45537.sample"
+
+[deps]
+
+source_file="res://resorces/music/nerves-by-kevin-macleod-from-filmmusic-io.wav"
+dest_files=[ "res://.import/nerves-by-kevin-macleod-from-filmmusic-io.wav-0035a7e42bd075a392bb9fe400a45537.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://ene/bat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://envierment/tree.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=10]
 [ext_resource path="res://resorces/colored_packed.png" type="Texture" id=11]
 [ext_resource path="res://crumble.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/start_area.gd" type="Script" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 0, 16, 0, 16 )
@@ -424,6 +425,7 @@ polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 
 outlines = [ PoolVector2Array( 560, -368, 1224, -368, 1224, -512, 1035.5, -512, 904, -512, 904, -544, 1064, -544, 1064, -576, 1000, -576, 1000, -608, 904, -616, 904, -664, 616, -664, 616, -784, 1680, -776, 1680, -504, 1680, -40, 1512, -40, 1512, -48, 1504, -48, 1504, -64, 1440, -64, 1440, -48, 1376, -48, 1376.79, -40, 1352, -40, 1346.8, -24.5023, 1336, -24, 1328, -40, 560, -40, 560, -24, 536, -24, 536, -40 ) ]
 
 [node name="start_area" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="tree" parent="." instance=ExtResource( 2 )]
 position = Vector2( -75.9318, -25.2642 )
@@ -851,13 +853,13 @@ position = Vector2( 1546.95, -358.459 )
 position = Vector2( -8, -32 )
 
 [node name="bat" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1482.95, 65.541 )
+position = Vector2( 1480, 32 )
 
 [node name="bat2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1682.95, 65.541 )
+position = Vector2( 1664, 32 )
 
 [node name="bat3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1858.95, 65.541 )
+position = Vector2( 1544, 32 )
 
 [node name="bat4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1754.95, -566.459 )
@@ -940,35 +942,20 @@ position = Vector2( 2818.95, -46.459 )
 [node name="fly25" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2730.95, -54.459 )
 
-[node name="fly26" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2698.95, -62.459 )
-
 [node name="fly27" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2786.95, -46.459 )
 
 [node name="fly28" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2642.95, -46.459 )
 
-[node name="fly29" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2794.95, -70.459 )
-
 [node name="fly30" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2802.95, -102.459 )
-
-[node name="fly31" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2746.95, -78.459 )
 
 [node name="fly32" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2714.95, -86.459 )
 
-[node name="fly33" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2834.95, -70.459 )
-
 [node name="fly34" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2738.95, -102.459 )
-
-[node name="fly35" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2818.95, -78.459 )
 
 [node name="fly36" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2850.95, -86.459 )
@@ -987,9 +974,6 @@ position = Vector2( 2866.95, -102.459 )
 
 [node name="fly41" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2874.95, -86.459 )
-
-[node name="fly42" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2882.95, -70.459 )
 
 [node name="fly43" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2858.95, -54.459 )
@@ -1015,26 +999,17 @@ position = Vector2( 2890.95, -46.459 )
 [node name="fly50" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2906.95, -86.459 )
 
-[node name="fly51" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3058.95, -86.459 )
-
 [node name="fly52" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2522.95, -78.459 )
 
 [node name="fly53" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2498.95, -94.459 )
 
-[node name="fly54" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2898.95, -70.459 )
-
 [node name="fly55" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2922.95, -54.459 )
 
 [node name="fly56" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3162.95, -54.459 )
-
-[node name="fly57" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2938.95, -86.459 )
 
 [node name="fly58" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2914.95, -102.459 )
@@ -1057,9 +1032,6 @@ position = Vector2( 3242.95, -62.459 )
 [node name="fly64" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2970.95, -86.459 )
 
-[node name="fly65" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3018.95, -78.459 )
-
 [node name="fly66" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3042.95, -94.459 )
 
@@ -1080,7 +1052,7 @@ position = Vector2( 3498.95, 1441.54 )
 
 [node name="area_transition2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 274.95, -46.459 )
-level = -1
+level = 6
 
 [node name="Label" type="Label" parent="."]
 margin_left = 4330.95

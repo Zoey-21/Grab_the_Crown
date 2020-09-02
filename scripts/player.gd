@@ -234,6 +234,7 @@ func gui():
 		warning.set_text(str(round(get_tree().get_root().get_node("col_timer").time_left)))
 		
 func respawn():
+	music.play_music("res://resorces/music/Tranquility Base.wav",-12)
 	position = player_data.player_data["postion_save"]
 	if player_data.player_data["collapsing"]:
 		get_tree().get_root().get_node("col_timer").queue_free()
@@ -283,7 +284,7 @@ func _on_light_area_entered(area):
 			area.visible = false
 
 func _on_start_timer_timeout():
-	col_timer.wait_time = 240
+	col_timer.wait_time = 180
 	col_timer.name = "col_timer"
 	col_timer.connect("timeout",self,"_on_col_timer_timeout") 
 	get_tree().get_root().add_child(col_timer)

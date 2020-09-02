@@ -29,6 +29,8 @@ var player_data_default = {
 	"collapsing" : false,
 	"timer_started" : false,
 	"finished" : false,
+	
+	"time_played": 0,
 	}
 
 var player_data = {
@@ -57,6 +59,8 @@ var player_data = {
 	"collapsing" : false,
 	"timer_started" : false,
 	"finished" : false,
+	
+	"time_played": 0,
 	}
 
 func save():

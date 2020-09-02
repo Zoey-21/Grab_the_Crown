@@ -18,11 +18,20 @@ onready var gloves = $Camera2D/gui/gloves
 onready var gnades = $Camera2D/gui/gnades
 
 var up = false
+onready var music = get_node("/root/music")
+onready var time_played = get_node("/root/timeplayed")
+
 
 func _ready():
+	time_played.start()
 	$Camera2D.current = true
 	pl_gui.visible = false
 	cam_gui.visible = true
+	if !music.playing:
+		music.play_music("res://resorces/music/Tranquility Base.wav",-12)
+		if player_data.player_data["crown"]:
+			music.play_music("res://resorces/music/nerves-by-kevin-macleod-from-filmmusic-io.wav",-12)
+
 
 func _physics_process(_delta):
 	gui()
@@ -34,7 +43,7 @@ func _physics_process(_delta):
 			$Camera2D.position.y -=  0.8
 	else:
 		$player/Camera2D.current = true
-		$Camera2D/death_plane/CollisionShape2D.disabled
+		$Camera2D/death_plane/CollisionShape2D.disabled = true
 		pl_gui.visible = true
 		cam_gui.visible = false
 

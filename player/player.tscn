@@ -11,9 +11,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.28192, 0.897181 )
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 6.29352
-height = 2.97962
+[sub_resource type="CircleShape2D" id=8]
+radius = 5.8743
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -82,9 +81,8 @@ position = Vector2( -0.338707, 4.26073 )
 shape = SubResource( 1 )
 
 [node name="body" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -0.329613, -1.21667 )
-shape = SubResource( 2 )
+position = Vector2( -0.395829, -0.554504 )
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
@@ -230,7 +228,7 @@ margin_right = 115.0
 margin_bottom = -17.0
 custom_fonts/font = ExtResource( 4 )
 text = "warning: castle unstable 
-collapsing in 240 seconds"
+collapsing in 180 seconds"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -241,6 +239,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="light" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="light"]
 shape = SubResource( 7 )

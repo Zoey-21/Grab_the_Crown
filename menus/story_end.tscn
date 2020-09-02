@@ -281,6 +281,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="time" type="Label" parent="."]
+margin_left = 98.5255
+margin_top = 29.4745
+margin_right = 201.526
+margin_bottom = 45.4745
+custom_fonts/font = ExtResource( 1 )
+text = "time taken:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="z" type="Sprite" parent="."]
 position = Vector2( 840, 511.998 )
 scale = Vector2( 5, 5 )

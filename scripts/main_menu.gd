@@ -8,11 +8,16 @@ onready var login = $login
 var result
 var passportUrl = null
 var saveFile = File.new()
+onready var time_played = get_node("/root/timeplayed")
 
 func _ready():
+	time_played.stop()
 	player_data.loading()
 	Input.set_mouse_mode(0)
 	_api_start()
+	if !music.playing:
+		music.play_music("res://resorces/music/Grab The Crown - Main Theme.wav",-12)
+
 
 
 func _on_start_pressed():
@@ -23,6 +28,7 @@ func _on_start_pressed():
 func _on_load_pressed():
 	print(player_data.player_data["map"])
 #	if !player_data.player_data["map"] == "map":
+	music.stop()
 	get_tree().change_scene(player_data.player_data["map"])
 
 
@@ -96,3 +102,11 @@ func _on_checklog_pressed():
 			$login.disabled = true
 			$sat.text = 'Session: None'
 			$user.text = ''
+
+
+func _on_credits2_pressed():
+	$creditcam.current = true
+
+
+func _on_credits3_pressed():
+	$Camera2D.current = true
