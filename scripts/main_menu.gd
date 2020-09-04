@@ -11,6 +11,7 @@ var saveFile = File.new()
 onready var time_played = get_node("/root/timeplayed")
 
 func _ready():
+	print($NewGroundsAPI.applicationId)
 	time_played.stop()
 	player_data.loading()
 	Input.set_mouse_mode(0)
@@ -36,12 +37,11 @@ func _on_fullscreen_pressed():
 		OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_login_pressed():
-	login.visible = false
-	enable.visible = true
+
 	OS.shell_open(passportUrl)
 	passportUrl = null
-	$lonin.disabled = true
-	$labal.text = 'Go and login via browser to connect user with session'
+	$Label.text = 'Go and login via browser to connect user with session'
+	$login.visible = false
 	
 
 func _write_save_file():
@@ -50,36 +50,38 @@ func _write_save_file():
 func _api_start():
 	if saveFile.file_exists(SAVE_FILE_NAME):
 		saveFile.open(SAVE_FILE_NAME, File.READ)
-		var saveData = saveFile.get_var() # Dictionary
+		var saveData = api.saveFile.get_var() # Dictionary
 		saveFile.close()
-		$NewGroundsAPI.session_id = saveData.sessionId
-		$NewGroundsAPI.applicationId = saveData.applicationId
-		if saveData.sessionId and saveData.sessionId.length() > 0:
-			$sat.text = 'Session: To Check'
-		$Value.text = saveData.applicationId
-		
-	$labal.text = ''
+		$NewGroundsAPI.session_id = api.saveData.sessionId
+		$NewGroundsAPI.applicationId = api.saveData.applicationId
+		if api.saveData.sessionId and api.saveData.sessionId.length() > 0:
+			$Session.text = 'Session: To Check'
+		if api.saveData.applicationId != null:
+			$Value.text = api.saveData.applicationId
+	$Label.text = ''
 	$NewGroundsAPI.App.startSession()
 	var result = yield($NewGroundsAPI, 'ng_request_complete')
 	if $NewGroundsAPI.is_ok(result):
 		$NewGroundsAPI.session_id = result.response.session.id
 		passportUrl = result.response.session.passport_url
-		$login.disabled = false
+		$Login.disabled = false
 		
 		if result.response.session.expired:
-			$sat.text = 'Session: Expired'
+			$Session.text = 'Session: Expired'
 		else:
-			$sat.text = 'Session: Valid'
+			$Session.text = 'Session: Valid'
 			_write_save_file()
 		
 		if result.response.session.user:
-			$user.text =result.response.session.user.name + '[' + result.response.session.user.id + ']'
+			$User.text = result.response.session.user.name.to_lower()
 		else:
-			$user.text = ' '
+			$User.text = 'User: '
 	else:
-		$labal.text = result.error
-		$sat.text = 'Session: None'
-		$user.text = ''
+		$Label.text = result.error
+		$Session.text = 'Session: None'
+		$User.text = 'User: '
+	pass
+	
 
 func _on_checklog_pressed():
 		$labal.text = ''
@@ -87,21 +89,21 @@ func _on_checklog_pressed():
 		var result = yield($NewGroundsAPI, 'ng_request_complete')
 		if $NewGroundsAPI.is_ok(result):
 			if result.response.session.expired:
-				$sat.text = 'Session: Expired'
+				$Session.text = 'Session: Expired'
 			else:
-				$sat.text = 'Session: Valid'
+				$Session.text = 'Session: Valid'
 			if result.response.session.user:
-				$user.text = result.response.session.user.name.to_lower()
+				$User.text = result.response.session.user.name.to_lower()
 				enable.disabled = true
 			else:
-				$user.text = ' '
+				$User.text = ' '
 		else:
 			$NewGroundsAPI.session_id = ''
 			$labal.text = result.error
 			passportUrl = null
 			$login.disabled = true
-			$sat.text = 'Session: None'
-			$user.text = ''
+			$Session.text = 'Session: None'
+			$User.text = ''
 
 
 func _on_credits2_pressed():
@@ -110,3 +112,19 @@ func _on_credits2_pressed():
 
 func _on_credits3_pressed():
 	$Camera2D.current = true
+
+
+func _on_log_out_pressed():
+	api.delete()
+	$Label.text = ''
+	$NewGroundsAPI.App.endSession()
+	var result = yield($NewGroundsAPI, 'ng_request_complete')
+	if $NewGroundsAPI.is_ok(result):
+		$NewGroundsAPI.session_id = ''
+		passportUrl = null
+	else:
+		$Label.text = result.error
+	$Session.text = 'Session: None'
+	$User.text = 'User: '
+	enable.disabled = false
+	

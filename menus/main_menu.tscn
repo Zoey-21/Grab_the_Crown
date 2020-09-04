@@ -74,6 +74,7 @@ __meta__ = {
 }
 
 [node name="enable" type="Button" parent="."]
+visible = false
 margin_left = 117.91
 margin_top = 68.455
 margin_right = 229.91
@@ -85,17 +86,30 @@ __meta__ = {
 }
 
 [node name="login" type="Button" parent="."]
-margin_left = 117.91
-margin_top = 68.4549
-margin_right = 229.91
-margin_bottom = 85.4549
+visible = false
+margin_left = 118.533
+margin_top = 68.1057
+margin_right = 230.533
+margin_bottom = 85.106
 custom_fonts/font = ExtResource( 2 )
 text = "log-in"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="log_out" type="Button" parent="."]
+visible = false
+margin_left = 0.910069
+margin_top = 2.26428
+margin_right = 84.9101
+margin_bottom = 19.2643
+custom_fonts/font = ExtResource( 2 )
+text = "log-out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
 margin_left = 109.41
 margin_top = 27.261
 margin_right = 237.41
@@ -108,7 +122,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="keys" type="Label" parent="."]
 margin_left = 88.4334
 margin_top = 165.029
 margin_right = 257.433
@@ -149,14 +163,15 @@ Nerves by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4117-nerves
 License: http://creativecommons.org/licenses/by/4.0/
 
-space 
-for 
-alex"
+Grab the Crown - Main Theme
+By ButterBees at Newgrounds
+Link: https://www.newgrounds.com/audio/listen/961623"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="user" type="Label" parent="."]
+[node name="User" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 2 )
@@ -164,7 +179,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sat" type="Label" parent="."]
+[node name="Session" type="Label" parent="."]
 visible = false
 margin_left = 1.88776
 margin_top = 71.9704
@@ -174,12 +189,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="labal" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 visible = false
-margin_left = 1.65178
-margin_top = 51.2052
-margin_right = 41.6518
-margin_bottom = 65.2052
+margin_left = 886.651
+margin_top = 397.993
+margin_right = 926.651
+margin_bottom = 411.993
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,3 +219,4 @@ applicationId = "50757:kbsDEglL"
 [connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="enable" to="." method="_on_checklog_pressed"]
 [connection signal="pressed" from="login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="log_out" to="." method="_on_log_out_pressed"]
