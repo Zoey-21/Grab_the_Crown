@@ -44,26 +44,22 @@ func ending():
 		complete.visible = false
 		speed.visible = true
 		low.visible = false
-		_unlock(60320)
 	elif player_data.player_data["gun"] == 3 and player_data.player_data["light"]:
 		beat_game.visible = false
 		complete.visible = true
 		speed.visible = false
 		low.visible = false
-		_unlock(60317)
 	elif player_data.player_data["gun"] == 0 and !player_data.player_data["light"]:
 		beat_game.visible = false
 		complete.visible = false
 		speed.visible = false
 		low.visible = true
-		_unlock(60318)
 	else:
 		beat_game.visible = true
 		complete.visible = false
 		speed.visible = false
 		low.visible = false
-#	_unlock(60319)
-	_unlock(60371)
+
 		
 func items():
 	match player_data.player_data["gun"]:

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://resorces/text.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resorces/tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://resorces/colored_packed.png" type="Texture" id=4]
-[ext_resource path="res://addons/newgrounds/NewGroundsAPI.gd" type="Script" id=5]
 
 [node name="main menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,9 +19,9 @@ hframes = 48
 
 [node name="start" type="Button" parent="."]
 margin_left = 142.41
-margin_top = 95.0
+margin_top = 71.8753
 margin_right = 204.41
-margin_bottom = 112.0
+margin_bottom = 88.8753
 custom_fonts/font = ExtResource( 2 )
 text = "start"
 __meta__ = {
@@ -31,9 +30,9 @@ __meta__ = {
 
 [node name="load" type="Button" parent="."]
 margin_left = 147.41
-margin_top = 116.75
+margin_top = 93.6253
 margin_right = 199.41
-margin_bottom = 133.75
+margin_bottom = 110.625
 custom_fonts/font = ExtResource( 2 )
 text = "load"
 __meta__ = {
@@ -42,9 +41,9 @@ __meta__ = {
 
 [node name="credits2" type="Button" parent="."]
 margin_left = 133.535
-margin_top = 143.238
+margin_top = 120.113
 margin_right = 211.535
-margin_bottom = 160.238
+margin_bottom = 137.113
 custom_fonts/font = ExtResource( 2 )
 text = "credits"
 __meta__ = {
@@ -124,11 +123,12 @@ __meta__ = {
 
 [node name="keys" type="Label" parent="."]
 margin_left = 88.4334
-margin_top = 165.029
-margin_right = 257.433
-margin_bottom = 197.029
+margin_top = 141.904
+margin_right = 262.433
+margin_bottom = 173.904
 custom_fonts/font = ExtResource( 2 )
-text = "arrow keys to move"
+text = "arrow keys to move 
+r to respawn"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -208,10 +208,6 @@ margin_bottom = 38.7767
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="NewGroundsAPI" type="HTTPRequest" parent="."]
-script = ExtResource( 5 )
-applicationId = "50757:kbsDEglL"
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="credits2" to="." method="_on_credits2_pressed"]

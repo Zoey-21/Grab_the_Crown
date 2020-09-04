@@ -62,7 +62,10 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 	
-	var move_dir = 0  
+	var move_dir = 0 
+	
+	if Input.is_action_just_released("restart"):
+		respawn()
 	
 	if Input.is_action_pressed("move_right"):
 		move_dir += 1
@@ -234,7 +237,8 @@ func gui():
 		warning.set_text(str(round(get_tree().get_root().get_node("col_timer").time_left)))
 		
 func respawn():
-	music.play_music("res://resorces/music/Tranquility Base.wav",-12)
+	if get_node("../").name != "start_area":
+		music.play_music("res://resorces/music/Tranquility Base.wav",-12)
 	position = player_data.player_data["postion_save"]
 	if player_data.player_data["collapsing"]:
 		get_tree().get_root().get_node("col_timer").queue_free()
