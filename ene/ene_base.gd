@@ -27,11 +27,10 @@ func hit():
 			meat_instance.position = get_global_position()
 			get_tree().get_root().call_deferred("add_child",meat_instance)
 		sprite.visible = false
-		collis.set_deferred("disabled", true)
-		hit_collis.set_deferred("disabled", true)
-		feet.set_deferred("disabled", true)
+#		collis.set_deferred("disabled", true)
+#		hit_collis.set_deferred("disabled", true)
+#		feet.set_deferred("disabled", true)
 		player.make_sound("res://resorces/sounds/ene_death.wav",0)
-		health = max_health
 		global_position = starting_pos
 		dead =true
 		if self.is_in_group("delete"):
@@ -51,5 +50,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 	collis.disabled = false
 	feet.disabled = false
 	dead = false
+	health = max_health
 	
 
